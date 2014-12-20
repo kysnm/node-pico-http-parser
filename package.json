@@ -2,7 +2,7 @@
   "name": "node-pico-http-parser",
   "version": "0.0.1",
   "description": "Fast HTTP Parser using picohttpparser (inspired by https://github.com/kazeburo/pico_http_parser)",
-  "main": "pico-http.js",
+  "main": "pico-http-parser.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha -R spec"
   },
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/kysnm/node-pico-http-parser",
   "devDependencies": {
     "mocha": "~2.0.1"
+  },
+  "dependencies": {
+    "nan": "~1.4.1"
   }
 }
