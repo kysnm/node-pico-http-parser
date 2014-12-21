@@ -15,7 +15,7 @@
     "parser"
   ],
   "author": "kysnm <tokyoincidents.g@gmail.com> (http://kysnm.hatenablog.com/)",
-  "license": "MIT",
+  "license": "",
   "bugs": {
     "url": "https://github.com/kysnm/node-pico-http-parser/issues"
   },
@@ -24,6 +24,7 @@
     "mocha": "~2.0.1"
   },
   "dependencies": {
-    "nan": "~1.4.1"
+    "nan": "~1.4.1",
+    "bindings": "~1.2.1"
   }
 }
