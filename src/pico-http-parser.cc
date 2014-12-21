@@ -1,6 +1,8 @@
+#include <cstdlib>
 #include <ctype.h>
 #include <nan.h>
 #include "picohttpparser/picohttpparser.c"
+#include <stdio.h>
 
 using namespace v8;
 
@@ -82,11 +84,11 @@ static int store_path_info(Local<Object> envref, const char* src, size_t src_len
   char *d;
   char s2, s3;
 
-  d = (char*)malloc(src_len * 3 + 1);
+  d = (char*)std::malloc(src_len * 3 + 1);
   for (i = 0; i < src_len; i++ ) {
     if ( src[i] == '%' ) {
       if ( !isxdigit(src[i+1]) || !isxdigit(src[i+2]) ) {
-        free(d);
+        std::free(d);
         return -1;
       }
       s2 = src[i+1];
@@ -106,7 +108,7 @@ static int store_path_info(Local<Object> envref, const char* src, size_t src_len
   }
   d[dlen]='0';
   envref->Set(NanNew<String>("PATH_INFO"), NanNew<String>(d, dlen));
-  free(d);
+  std::free(d);
   return dlen;
 }
 
